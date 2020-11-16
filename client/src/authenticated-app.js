@@ -18,14 +18,14 @@ const Athenticated = () => {
           setFirstAttemptFinished(true)
         }
       }, [isLoading])
-    
+
       if (!firstAttemptFinished) {
           return <FullPageSpinner />
       }
-    return ( 
+    return (
         <Routes authUser={user}/>
      );
-} 
+}
 const condition = (authUser) => authUser;
 export default withAuthorization(condition)(Athenticated);
 
