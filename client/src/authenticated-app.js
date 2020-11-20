@@ -5,6 +5,7 @@ import * as ROUTES from "./app/config/routes";
 import Admin from './app/screens/Admin/index';
 import Trainer from './app/screens/Trainer/index';
 import Trainee from './app/screens/Trainee/index';
+import Enrolled from './Enrolled/Enrolled';
 
 const Athenticated = () => {
     return ( 
@@ -20,6 +21,7 @@ function Routes() {
                 <Route path={ROUTES.ADMIN} component={Admin} />
                 <Route path={ROUTES.TRAINER} component={Trainer} />
                 <Route path={ROUTES.TRAINEE} component={Trainee} />
+                <Route path={ROUTES.ENROLLED} component={Enrolled} />
                 <Route path="/">
                     <Redirect to={ROUTES.ADMIN}/>
                 </Route>

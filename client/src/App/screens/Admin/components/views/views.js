@@ -7,6 +7,8 @@ import DvrIcon from '@material-ui/icons/Dvr';
 import QueuePlayNextIcon from '@material-ui/icons/QueuePlayNext';
 import SchoolIcon from '@material-ui/icons/School';
 import { Typography } from '@material-ui/core';
+import *as ROUTES   from '../../../../config/routes';
+import {Link} from 'react-router-dom'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -52,8 +54,10 @@ export default function FullWidthGrid(props) {
               {props.hired}
             </div>
         </Grid>
+
         <Grid item xs={12} sm={6}>
-            <div className={classes.paper}>
+        <Link to ={ROUTES.ENROLLED}>
+        <div className={classes.paper}>
                 <PersonIcon style={{
                   color: '#82B366', 
                   fontSize: '40px', 
@@ -65,6 +69,9 @@ export default function FullWidthGrid(props) {
               <br />
               {props.trainees}
             </div>
+        
+        </Link>
+            
         </Grid>
 
         <Grid item xs={12} sm={6}>
