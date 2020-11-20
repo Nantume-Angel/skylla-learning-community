@@ -5,7 +5,7 @@ import * as ROUTES from "./App/config/routes";
 import Admin from './App/screens/Admin/index';
 import Trainer from './App/screens/Trainer/index';
 import Trainee from './App/screens/Trainee/index';
-import HiredTrainees from './App/hired-trainees';
+import HiredTrainees from './App/hired-trainees/index';
 
 const Athenticated = () => {
     return ( 
