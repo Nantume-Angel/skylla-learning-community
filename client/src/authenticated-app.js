@@ -1,10 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
 
-import * as ROUTES from "./app/config/routes";
-import Admin from './app/screens/Admin/index';
-import Trainer from './app/screens/Trainer/index';
-import Trainee from './app/screens/Trainee/index';
+import * as ROUTES from "./App/config/routes";
+import Admin from './App/screens/Admin/index';
+import Trainer from './App/screens/Trainer/index';
+import Trainee from './App/screens/Trainee/index';
+import HiredTrainees from './App/hired-trainees';
 
 const Athenticated = () => {
     return ( 
@@ -20,6 +21,7 @@ function Routes() {
                 <Route path={ROUTES.ADMIN} component={Admin} />
                 <Route path={ROUTES.TRAINER} component={Trainer} />
                 <Route path={ROUTES.TRAINEE} component={Trainee} />
+                <Route path={ROUTES.HIRED_TRAINEES} component={HiredTrainees} />
                 <Route path="/">
                     <Redirect to={ROUTES.ADMIN}/>
                 </Route>
