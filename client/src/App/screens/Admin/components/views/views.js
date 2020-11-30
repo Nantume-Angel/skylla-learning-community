@@ -56,7 +56,7 @@ export default function FullWidthGrid(props) {
         </Grid>
 
         <Grid item xs={12} sm={6}>
-        <Link to ={ROUTES.ENROLLED}>
+        <a href ={ROUTES.ENROLLED}>
         <div className={classes.paper}>
                 <PersonIcon style={{
                   color: '#82B366', 
@@ -70,7 +70,7 @@ export default function FullWidthGrid(props) {
               {props.trainees}
             </div>
         
-        </Link>
+        </a>
             
         </Grid>
 
