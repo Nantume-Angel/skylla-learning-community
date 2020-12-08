@@ -1,4 +1,5 @@
 /** @jsx jsx */
+/** @jsxRuntime classic */
 import {jsx} from '@emotion/core'
 
 import {keyframes} from '@emotion/core'
