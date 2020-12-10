@@ -11,7 +11,7 @@ import { FormGroup } from '../../../components';
 import TextFieldMui from "../../components/textField";
 import ButtonMui from "../../components/button";
 
-const CreateAssessment = () => {
+const finalAssessment = () => {
     // const classes = useStyles();
     return(
         <div>
@@ -64,7 +64,7 @@ class FinalAssessmentForm extends Component {
         this.db.settings({
             timestampsInSnapshots : true
         })
-        this.db.collection(`users/admin/dashboard/assessment/assessments`).add({
+        this.db.collection(`users/admin/dashboard/finalassessment/finalassessment`).add({
             user: this.Authuser.email,
             uid: this.Authuser.uid,
             modulename: this.state.modulename,
@@ -135,7 +135,7 @@ class FinalAssessmentForm extends Component {
                             name="modulename"
                             value={modulename}
                             onChange={this.onChange}
-                            placeholder="Enter modulename here"
+                            placeholder="Enter moduleName "
                         />
                     </FormGroup>
 
@@ -173,7 +173,7 @@ class FinalAssessmentForm extends Component {
                         name="content"
                         value={content}
                         aria-label="minimum height" 
-                        placeholder="Ask the Content of the Assement"
+                        placeholder="Ask the Content of the Assessment"
                         rowsMin={10}
                         onChange={this.onChange}
                         style={{margin:'20px auto',width:'100%'}}
