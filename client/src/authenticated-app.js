@@ -16,6 +16,7 @@ import SuccessPage from './App/screens/cart/components/CartSucess/index';
 import Chat from './App/screens/LiveSupport/LiveSupport2/index';
 import LiveSupport from './App/screens/LiveSupport/index';
 import CartApp  from './App/screens/cart';
+import FinalAssessment from './App/screens/Admin/screens/FinalAssessment';
 
 function NetworkError() {
     return (

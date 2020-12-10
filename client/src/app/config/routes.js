@@ -15,4 +15,5 @@ export const PAYMENT = '/payment';
 export const LIVE_SUPPORT ='/support';
 export const SUCCESS_PAGE = '/success';
 export const CHAT ='/chat'
+export const FINALASSESSMENT = '/finalassessment';
 

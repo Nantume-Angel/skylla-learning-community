@@ -21,6 +21,7 @@ import DeleteUsers from './screens/deleteUsers';
 import CreateModule  from './screens/createModule';
 import ProfilePage from './screens/profilePage';
 import Assessments from './screens/assignment/index';
+import FinalAssessment from './screens/FinalAssessment';
 
 import {
   BrowserRouter as Router,
@@ -50,12 +51,10 @@ const routes = [
   },
 
   {
-    path: "/final_assessment",
+    path: "/finalassessment",
     exact: true,
     sidebar: () => <div></div>,
-    main: () => <div>
-      Final Assessments page
-    </div>
+    main: () => <FinalAssessment />
   },
 
   {
