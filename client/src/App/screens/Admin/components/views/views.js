@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import PersonIcon from '@material-ui/icons/Person';
@@ -9,6 +9,7 @@ import SchoolIcon from '@material-ui/icons/School';
 import { Typography } from '@material-ui/core';
 import *as ROUTES   from '../../../../config/routes';
 import {Link} from 'react-router-dom'
+import  FirebaseContext  from 'firebase';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -36,7 +37,58 @@ const useStyles = makeStyles((theme) => ({
 
 export default function FullWidthGrid(props) {
   const classes = useStyles();
+  const [count , setCount] = useState([])
+  const [active, setActive] = useState([])
+  const [live , setLive] = useState([])
+  const [trainers , setTrainers] = useState([])
+  const [modules , setModules] = useState([])
+  const [sessions , setSessions] = useState([])
+  const [announcements , setAnnouncements] = useState([])
+  const [hired , setHired] = useState([])
 
+  useEffect(()=>{
+    FirebaseContext.firestore().collection("orders/8XAMQYBG1zOq6iCe7e2W9jajvSs2/items")
+    .get()
+    .then(querySnapshot => {
+      setCount(querySnapshot.size)
+    }); 
+    FirebaseContext.firestore().collection("users/trainee/users")
+    .get()
+    .then(snap =>{
+      setActive(snap.size)
+    })
+    FirebaseContext.firestore().collection("users/trainer/dashboard/live_class/schedule")
+    .get()
+    .then(snap =>{
+      setLive(snap.size)
+    })
+    FirebaseContext.firestore().collection("users/trainer/sys_trainers")
+    .get()
+    .then(snap =>{
+      setTrainers(snap.size)
+    })
+    FirebaseContext.firestore().collection("modules")
+    .get()
+    .then(snap =>{
+      setModules(snap.size)
+    })
+    FirebaseContext.firestore().collection("users/trainer/dashboard/session/session")
+    .get()
+    .then(snap =>{
+      setSessions(snap.size)
+    })
+    FirebaseContext.firestore().collection("users/admin/dashboard/anouncement/anouncement")
+    .get()
+    .then(snap =>{
+      setAnnouncements(snap.size)
+    })
+    FirebaseContext.firestore().collection("users/admin/dashboard/hired_trainees/hired")
+    .get()
+    .then(snap =>{
+      setHired(snap.size)
+    })
+  })
+  
   return (
     <div className={classes.root}>
       <Grid container spacing={6} className={classes.grid}>
@@ -49,9 +101,9 @@ export default function FullWidthGrid(props) {
                   marginRight: '20px'
                 }} 
                 />
-              Hired Trainees   
+              Hired Trainees  
+              <h3>{hired}</h3> 
               <br />
-              {props.hired}
             </div>
         </Grid>
 
@@ -65,9 +117,9 @@ export default function FullWidthGrid(props) {
                   marginRight: '20px'
                 }} 
                 />    
-                Enrolled trainees
+                Enrolled trainees {" "}
+                <h3>{count}</h3>
               <br />
-              {props.trainees}
             </div>
         
         </a>
@@ -84,7 +136,7 @@ export default function FullWidthGrid(props) {
                 />    
                    active users
               <br />
-              {props.active_users}
+              <h3>{active}</h3>
             </div>
         </Grid>
 
@@ -101,7 +153,7 @@ export default function FullWidthGrid(props) {
                 />    
                 Announcements 
               <br />
-              {props.announce}
+                  <h3>{announcements}</h3>
             </div>
         </Grid>
 
@@ -115,7 +167,7 @@ export default function FullWidthGrid(props) {
                     />    
                    sessions
                 <br />
-                {props.sessions}
+                <h3>{sessions}</h3>
             </div>
         </Grid>
 
@@ -129,7 +181,7 @@ export default function FullWidthGrid(props) {
                     />    
                     Live Classes
                 <br />
-                {props.classes}
+                <h3>{live}</h3>
             </div>
         </Grid>
 
@@ -143,7 +195,7 @@ export default function FullWidthGrid(props) {
                     />    
                     Trainers
                 <br />
-                {props.trainers}
+                <h3>{trainers}</h3>
             </div>
         </Grid>
 
@@ -157,7 +209,7 @@ export default function FullWidthGrid(props) {
                     />    
                     Trainer's Modules
                 <br />
-                {props.modules}
+                <h3>{modules}</h3>
             </div>
         </Grid>
 

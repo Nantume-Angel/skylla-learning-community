@@ -6,6 +6,7 @@ import AddCircleIcon from '@material-ui/icons/AddCircle';
 import './permissions.css'
 import { Link } from 'react-router-dom';
 
+
 const permissions = (props) => {
   return (
     <div>

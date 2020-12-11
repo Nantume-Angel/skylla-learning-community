@@ -29,3 +29,15 @@ function Routes() {
         </Router>
     )
 }
+
+// import React from 'react'
+// import Enrolled from './App/enrolled/enrolled'
+
+// const App = () =>{
+//     return(
+//         <div>
+//             <Enrolled />
+//         </div>
+//     )
+// }
+// export default App
